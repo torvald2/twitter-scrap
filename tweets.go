@@ -32,7 +32,6 @@ func (s *Scraper) FetchTweetsByUserID(userID string, maxTweetsNbr int, cursor st
 	}
 
 	req, err := s.newRequest("GET", "https://twitter.com/i/api/graphql/UGi7tjRPr-d_U3bCPIko5Q/UserTweets")
-	req.Header.Set("x-csrf-token", "dd638255c35b5a1cd298963338d6c056ce99b1a22e3bbe6ee3155929495ae31c65067f67fd48bc27a536fbc585e41536a38792bc9e29fc02af95a8a477e42186fff116c894a1959d93c9e84bdc52e2f4")
 	if err != nil {
 		return nil, "", err
 	}
@@ -95,7 +94,6 @@ func (s *Scraper) FetchTweetsByUserIDLegacy(userID string, maxTweetsNbr int, cur
 	}
 
 	req, err := s.newRequest("GET", "https://api.twitter.com/2/timeline/profile/"+userID+".json")
-	req.Header.Set("x-csrf-token", "dd638255c35b5a1cd298963338d6c056ce99b1a22e3bbe6ee3155929495ae31c65067f67fd48bc27a536fbc585e41536a38792bc9e29fc02af95a8a477e42186fff116c894a1959d93c9e84bdc52e2f4")
 	if err != nil {
 		return nil, "", err
 	}
@@ -122,7 +120,6 @@ func (s *Scraper) FetchTweetsByUserIDLegacy(userID string, maxTweetsNbr int, cur
 func (s *Scraper) GetTweet(id string) (*Tweet, error) {
 	if s.isOpenAccount {
 		req, err := s.newRequest("GET", "https://api.twitter.com/2/timeline/conversation/"+id+".json")
-		req.Header.Set("x-csrf-token", "dd638255c35b5a1cd298963338d6c056ce99b1a22e3bbe6ee3155929495ae31c65067f67fd48bc27a536fbc585e41536a38792bc9e29fc02af95a8a477e42186fff116c894a1959d93c9e84bdc52e2f4")
 		if err != nil {
 			return nil, err
 		}
@@ -141,7 +138,6 @@ func (s *Scraper) GetTweet(id string) (*Tweet, error) {
 		}
 	} else {
 		req, err := s.newRequest("GET", "https://twitter.com/i/api/graphql/VWFGPVAGkZMGRKGe3GFFnA/TweetDetail")
-		req.Header.Set("x-csrf-token", "dd638255c35b5a1cd298963338d6c056ce99b1a22e3bbe6ee3155929495ae31c65067f67fd48bc27a536fbc585e41536a38792bc9e29fc02af95a8a477e42186fff116c894a1959d93c9e84bdc52e2f4")
 		if err != nil {
 			return nil, err
 		}

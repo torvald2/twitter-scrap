@@ -51,7 +51,6 @@ type user struct {
 func (s *Scraper) GetProfile(username string) (Profile, error) {
 	var jsn user
 	req, err := http.NewRequest("GET", "https://api.twitter.com/graphql/4S2ihIKfF3xhp-ENxvUAfQ/UserByScreenName", nil)
-	req.Header.Set("x-csrf-token", "dd638255c35b5a1cd298963338d6c056ce99b1a22e3bbe6ee3155929495ae31c65067f67fd48bc27a536fbc585e41536a38792bc9e29fc02af95a8a477e42186fff116c894a1959d93c9e84bdc52e2f4")
 	if err != nil {
 		return Profile{}, err
 	}
