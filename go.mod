@@ -1,4 +1,4 @@
-module github.com/boryslavqq/twitter-scraper
+module github.com/boryslavqq/twitter-scrap
 
 go 1.16
 
