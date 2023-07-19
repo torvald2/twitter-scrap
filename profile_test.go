@@ -39,6 +39,7 @@ func TestGetProfile(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
+	fmt.Println(profile)
 
 	cmpOptions := cmp.Options{
 		cmpopts.IgnoreFields(twitterscraper.Profile{}, "FollowersCount"),
