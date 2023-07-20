@@ -3,7 +3,6 @@ package twitterscraper
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/corpix/uarand"
 	"io"
 	"net/http"
 	"time"
@@ -23,8 +22,6 @@ func (s *Scraper) RequestAPI(req *http.Request, target interface{}) error {
 			}()
 		}()
 	}
-
-	req.Header.Set("User-Agent", uarand.GetRandom())
 
 	if !s.isLogged {
 		if !s.IsGuestToken() || s.guestCreatedAt.Before(time.Now().Add(-time.Hour*3)) {
