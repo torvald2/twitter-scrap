@@ -106,7 +106,6 @@ func (s *Scraper) getSearchTimeline(query string, maxNbr int, cursor string) (*s
 		"rawQuery":    query,
 		"count":       maxNbr,
 		"querySource": "typed_query",
-		"product":     "11122",
 	}
 
 	features := map[string]interface{}{
