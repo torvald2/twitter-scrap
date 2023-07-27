@@ -66,8 +66,8 @@ func (s *Scraper) FetchTweetsByUserID(userID string, maxTweetsNbr int, cursor st
 		"longform_notetweets_rich_text_read_enabled":                              true,
 		"longform_notetweets_inline_media_enabled":                                false,
 		"responsive_web_enhance_cards_enabled":                                    false,
-		"responsive_web_twitter_article_tweet_consumption_enabled":                false,
-		"responsive_web_media_download_video_enabled":                             false,
+		"responsive_web_twitter_article_tweet_consumption_enabled":                true,
+		"responsive_web_media_download_video_enabled":                             true,
 	}
 
 	if cursor != "" {
