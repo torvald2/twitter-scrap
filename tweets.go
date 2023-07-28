@@ -43,6 +43,7 @@ func (s *Scraper) FetchTweetsByUserID(userID string, maxTweetsNbr int, cursor st
 		"withQuickPromoteEligibilityTweetFields": false,
 		"withVoice":                              true,
 		"withV2Timeline":                         true,
+		"product":                                "Latest",
 	}
 	features := map[string]interface{}{
 		"rweb_lists_timeline_redesign_enabled":                              true,
